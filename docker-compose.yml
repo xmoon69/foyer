@@ -24,7 +24,7 @@ services:
     depends_on:
       - mysqldb
     build: src
-    image: melekmejri/alpine:latest
+    image: melekmejri/tp.foyer:latest
     restart: on-failure
     ports:
       - "8089:8089"
