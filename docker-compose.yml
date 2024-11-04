@@ -23,7 +23,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    build: ./
+    build: src
     image: melekmejri/alpine:latest
     restart: on-failure
     ports:
