@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @Entity
 @Getter
 @Setter
@@ -23,6 +25,10 @@ public class Universite {
 
     @OneToOne(cascade = CascadeType.ALL)
     Foyer foyer;
+
+    @Temporal(TemporalType.DATE) // Assure-toi d'utiliser l'import pour la gestion des dates
+    Date dateCreation;
+
 
 }
 
