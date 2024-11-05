@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   mysqldb:
     image: mysql:5.7
@@ -21,7 +23,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: melekmejri/tp-foyer:latest  # Corrected image name
+    image: melekmejri/tp-foyer:latest  # Your image name
     build: .  # Ensure Dockerfile is in this directory
     restart: on-failure
     ports:
