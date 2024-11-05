@@ -1,12 +1,10 @@
-version: "3.8"
-
 services:
   mysqldb:
     image: mysql:5.7
     restart: unless-stopped
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: foyer  # Ensure correct spelling if needed
+      MYSQL_DATABASE: foyer
     ports:
       - "3306:3306"
     volumes:
@@ -23,8 +21,8 @@ services:
   app:
     depends_on:
       - mysqldb
-    build: src
-    image: melekmejri/tp.foyer:latest
+    image: melekmejri/tp-foyer:latest  # Corrected image name
+    build: .  # Ensure Dockerfile is in this directory
     restart: on-failure
     ports:
       - "8089:8089"
